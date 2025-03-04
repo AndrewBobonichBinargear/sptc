@@ -1,0 +1,145 @@
+.post {
+  margin: auto;
+  padding: 48px 0 0;
+}
+
+.post p {
+  margin-bottom: 20px;
+  padding: 0 15px;
+  margin: auto;
+}
+
+.post p:last-child {
+  margin-bottom: 0px;
+}
+
+.post figure {
+  margin: auto;
+  text-align: center;
+}
+
+.post figure img {
+  margin: 8px 0 20px 0;
+  width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  height: 256px;
+  border-radius: 16px;
+  padding: 0 15px;
+}
+
+.post .info-with-booking-wrapper p {
+  padding: 0;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.post .info-with-booking-wrapper p:last-child {
+  margin-bottom: 16px;
+}
+
+.post .info-with-booking-wrapper img {
+  width: 100%;
+  object-fit: cover;
+  height: 256px;
+  margin: 12px 0 20px;
+  border-radius: 16px;
+
+}
+
+.post .info-with-booking-wrapper a {
+  display: block;
+  margin: auto;
+}
+
+.info-with-booking-wrapper {
+  padding-bottom: 48px;
+}
+
+.info-with-booking {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+@media (min-width: 768px) {
+  .post {
+    margin: auto;
+    padding: 64px 0;
+  }
+
+  .post p {
+    margin-bottom: 28px;
+    padding: 0 48px;
+  }
+
+  .post figure img {
+    margin: 20px 0 28px 0;
+    padding: 0 48px;
+  }
+
+  .post .info-with-booking-wrapper p {
+    margin-bottom: 20px;
+  }
+
+  .info-with-booking-wrapper {
+    margin: auto;
+  }
+}
+
+@media (min-width: 1440px) {
+  .post figure {
+    max-width: 1000px;
+  }
+
+  .post p {
+    max-width: 1000px;
+
+  }
+
+
+  .info-with-booking {
+    flex-direction: row-reverse;
+    gap: 52px;
+    max-width: 1000px;
+    margin: auto;
+  }
+
+  .post .info-with-booking-wrapper a {
+    margin-left: inherit;
+  }
+
+  .post .info-with-booking-wrapper .info-image {
+    width: 100%;
+    max-width: 484px;
+  }
+
+  .post .info-with-booking-wrapper img {
+    margin: 0;
+    height: 278px;
+  }
+
+  .post .info-with-booking-wrapper p {
+    margin-bottom: 28px;
+    text-align: left;
+  }
+
+  .info-with-booking-wrapper {
+    padding: 24px 0 80px;
+  }
+
+  .post {
+    margin: auto;
+    padding: 80px 0;
+  }
+
+  .post figure img {
+    margin: 24px 0 28px 0;
+    padding: 0;
+  }
+
+  .post p {
+    margin-bottom: 28px;
+    padding: 0px;
+  }
+
+}

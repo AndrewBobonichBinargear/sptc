@@ -1,0 +1,36 @@
+.front_hero h1 {
+  color: var(--Grey-White, #fff);
+  text-align: center;
+  max-width: 325px;
+}
+
+.front_hero {
+  height: 100vh;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  position: relative;
+}
+
+.front_hero .container{
+  align-items: center;
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
+  height: 100%;
+  padding-bottom: 144px;
+}
+
+@media (min-width: 768px) {
+  .front_hero .container{
+    padding-bottom: 184px;
+  }
+  .front_hero h1 {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .front_hero .container{
+    padding-bottom: 142px;
+  }
+}

@@ -1,0 +1,430 @@
+h1 {
+  color: var(--Grey-Text, #191919);
+  font-family: Lora;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  letter-spacing: -0.24px;
+}
+
+h2 {
+  color: var(--Grey-Text, #191919);
+  font-family: Lora;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+  letter-spacing: -0.2px;
+}
+
+.h1_monts_med {
+  color: var(--Grey-Text, #191919);
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%; /* 26px */
+  letter-spacing: -0.2px;
+}
+
+.h2_monts_med {
+  color: var(--Grey-Text, #191919);
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%; /* 23.4px */
+  letter-spacing: -0.18px;
+}
+
+.h2_monts_sem_bold {
+  color: var(--Grey-Text, #191919);
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%; /* 23.4px */
+  letter-spacing: -0.18px;
+}
+
+.h3_monts_med {
+  color: var(--Grey-Text, #191919);
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%; /* 20.8px */
+  letter-spacing: -0.16px;
+}
+
+.h3_monts_sem_bold {
+  color: var(--Grey-Text, #191919);
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%; /* 20.8px */
+  letter-spacing: -0.16px;
+}
+
+h4 {
+  color: var(--Grey-Text, #191919);
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 18.2px */
+  letter-spacing: -0.154px;
+}
+
+p, ul li {
+  color: var(--Grey-Text, #191919);
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 18.2px */
+  letter-spacing: -0.154px;
+  margin-bottom: 12px;
+}
+
+.info-with-image-wrapper ul li {
+  color: var(--Grey-Text, #191919);
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 18.2px */
+  letter-spacing: -0.154px;
+  margin-bottom: 20px;
+}
+
+.info-with-image-wrapper ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+
+.h4_monts_med {
+  color: var(--Grey-Text, #191919);
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%; /* 18.2px */
+  letter-spacing: -0.14px;
+}
+
+
+@media (min-width: 768px) {
+  .info-with-image-wrapper ul li {
+    color: var(--BG-Transparent, rgba(13, 13, 13, 0.84));
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 20.8px */
+    letter-spacing: -0.16px;
+    text-decoration-line: strikethrough;
+  }
+
+  h1 {
+    color: var(--Grey-Text, #191919);
+    font-family: Lora;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: -0.32px;
+  }
+
+  h2 {
+    color: var(--Grey-Text, #191919);
+    font-family: Lora;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    letter-spacing: -0.24px;
+  }
+
+  .h1_monts_med {
+    color: var(--Grey-Text, #191919);
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%; /* 31.2px */
+    letter-spacing: -0.264px;
+  }
+
+  .h2_monts_med {
+    color: var(--Grey-Text, #191919);
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%; /* 26px */
+    letter-spacing: -0.2px;
+  }
+
+  .h2_monts_sem_bold {
+    color: var(--Grey-Text, #191919);
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%; /* 26px */
+    letter-spacing: -0.2px;
+  }
+
+  h3 {
+    color: var(--Grey-Text, #191919);
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 23.4px */
+    letter-spacing: -0.18px;
+  }
+
+  .h3_monts_med {
+    color: var(--Grey-Text, #191919);
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%; /* 23.4px */
+    letter-spacing: -0.18px;
+  }
+
+  .h3_monts_sem_bold {
+    color: var(--Grey-Text, #191919);
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%; /* 23.4px */
+    letter-spacing: -0.18px;
+  }
+
+  h4 {
+    color: var(--Grey-Text, #191919);
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 20.8px */
+    letter-spacing: -0.16px;
+  }
+
+  p {
+    color: var(--Grey-Text, #191919);
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 20.8px */
+    letter-spacing: -0.16px;
+  }
+
+
+  .h4_monts_med {
+    color: var(--Grey-Text, #191919);
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%; /* 20.8px */
+    letter-spacing: -0.16px;
+  }
+
+
+  .h4_monts_sem_bold {
+    color: var(--Grey-Text, #191919);
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%; /* 23.4px */
+    letter-spacing: -0.18px;
+  }
+
+  h5 {
+    color: var(--Grey-Text, #191919);
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 18.2px */
+    letter-spacing: -0.154px;
+  }
+
+
+  .h5_monts_med {
+    color: var(--Grey-Text, #191919);
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%; /* 18.2px */
+    letter-spacing: -0.14px;
+  }
+}
+
+
+@media (min-width: 1440px) {
+  .info-with-image-wrapper ul li {
+    color: var(--BG-Transparent, rgba(13, 13, 13, 0.84));
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 23.4px */
+    letter-spacing: -0.18px;
+    text-decoration-line: strikethrough;
+  }
+
+  h1 {
+    color: var(--Grey-Text, #191919);
+    font-family: Lora;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: -0.48px;
+  }
+
+  h2 {
+    color: var(--Grey-Text, #191919);
+    font-family: Lora;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%; /* 36.4px */
+    letter-spacing: -0.28px;
+  }
+
+  .h1_monts_med {
+    color: var(--Grey-Text, #191919);
+    font-family: Montserrat;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    letter-spacing: -0.28px;
+  }
+
+  .h2_monts_med {
+    color: var(--Grey-Text, #191919);
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%; /* 31.2px */
+    letter-spacing: -0.24px;
+  }
+
+  .h2_monts_sem_bold {
+    color: var(--Grey-Text, #191919);
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%; /* 31.2px */
+    letter-spacing: -0.24px;
+  }
+
+  .h3_monts_med {
+    color: var(--Grey-Text, #191919);
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    letter-spacing: -0.2px;
+  }
+
+  .h3_monts_sem_bold {
+    color: var(--Grey-Text, #191919);
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%; /* 26px */
+    letter-spacing: -0.2px;
+  }
+
+  h4 {
+    color: var(--Grey-Text, #191919);
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 23.4px */
+    letter-spacing: -0.18px;
+  }
+
+  p {
+    color: var(--Grey-Text, #191919);
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 23.4px */
+    letter-spacing: -0.18px;
+  }
+
+  .h4_monts_med {
+    color: var(--Grey-Text, #191919);
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%; /* 23.4px */
+    letter-spacing: -0.18px;
+  }
+
+
+  .h4_monts_sem_bold {
+    color: var(--Grey-Text, #191919);
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%; /* 23.4px */
+    letter-spacing: -0.18px;
+  }
+
+  h5 {
+    color: var(--Grey-Text, #191919);
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 20.8px */
+    letter-spacing: -0.16px;
+  }
+
+
+  .h5_monts_med {
+    color: var(--Grey-Text, #191919);
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    letter-spacing: -0.16px;
+  }
+
+  h6 {
+    color: var(--Grey-Text, #191919);
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%; /* 18.2px */
+    letter-spacing: -0.14px;
+  }
+}

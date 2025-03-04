@@ -1,0 +1,846 @@
+.car-image img {
+  border-radius: 20px;
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+}
+
+.main-info-fleet {
+  display: flex;
+  gap: 28px;
+}
+
+.car-specs{
+  display: flex;
+  gap: 20px;
+  margin-bottom: 12px;
+}
+
+.fleet-item-car-specs {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 8px;
+}
+
+.related-fleet-item-specs {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 8px;
+}
+
+.spec-item {
+  position: relative;
+  padding-left: 30px;
+  color: var(--Grey-Text, #191919);
+
+  /* Montserrat/Desktop 1440/H3 | Medium */
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%; /* 26px */
+  letter-spacing: -0.2px;
+}
+
+.fleet-item-spec-item {
+  position: relative;
+  padding-left: 32px;
+  color: var(--Grey-Text, #191919);
+
+  /* Montserrat/Mobile 360/H2 | Medium */
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%; /* 23.4px */
+  letter-spacing: -0.18px;
+}
+
+.related-fleet-item-spec-item {
+  position: relative;
+  padding-left: 32px;
+  color: var(--Grey-Text, #191919);
+
+  /* Montserrat/Mobile 360/H2 | Medium */
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%; /* 23.4px */
+  letter-spacing: -0.18px;
+}
+
+.spec-item:before {
+  position: absolute;
+  content: "";
+  width: 18px;
+  height: 18px;
+  background-size: contain;
+  left: 0;
+  top: 4px;
+}
+
+.spec-item.passengers:before {
+  background: url(/wp-content/uploads/2025/02/ph_user-bold.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.main-info-fleet-wrapper p:last-child {
+  margin-bottom: 0;
+}
+
+.spec-item.luggage:before {
+  background: url(/wp-content/uploads/2025/02/solar_bag-2-linear.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.fleet-item-spec-item:before {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  left: 0;
+  top: 0px;
+}
+
+.fleet-item-spec-item.fleet-item-spec-item-passengers:before {
+  background: url(/wp-content/uploads/2025/02/ph_user-bold.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.main-info-fleet-wrapper p:last-child {
+  margin-bottom: 0;
+}
+
+.fleet-item-spec-item.fleet-item-spec-item-luggage:before {
+  background: url(/wp-content/uploads/2025/02/solar_bag-2-linear.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.related-fleet-item-spec-item:before {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  left: 0;
+  top: 0px;
+}
+
+.related-fleet-item-spec-item.related-fleet-item-spec-item-passengers:before {
+  background: url(/wp-content/uploads/2025/02/ph_user-bold.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.main-info-fleet-wrapper p:last-child {
+  margin-bottom: 0;
+}
+
+.related-fleet-item-spec-item.related-fleet-item-spec-item-luggage:before {
+  background: url(/wp-content/uploads/2025/02/solar_bag-2-linear.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.info-fleet .container {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  gap: 48px;
+}
+
+.fleet-container {
+  padding: 48px 0;
+}
+
+.fleet-tags {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.fleet-tags span {
+  color: var(--Orange-Dark, #BC6A2A);
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 18.2px */
+  letter-spacing: -0.154px;
+}
+
+.info-fleet {
+  margin-bottom: 48px;
+}
+
+.page-fleet {
+  padding: 48px 0;
+}
+
+.page-fleet .search-input {
+  position: relative;
+}
+
+.page-fleet .filter-fleet {
+  margin: 12px 0 28px;
+}
+
+.page-fleet .filter-fleet-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.filter-fleet-container {
+    display: flex;
+    gap: 20px;
+}
+
+
+.filter-fleet-container select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 100%;
+    padding: 10px;
+    padding-right: 30px;
+    border-radius: 6px;
+    border: 1px solid var(--Grey-Light, #EDEDED);
+    background-color: #fff;
+    font-size: 16px;
+    position: relative;
+    outline: none;
+}
+
+.filter-fleet-container select:focus {
+    border-color: var(--Grey-Dark, #B0B0B0); /* Цвет при фокусе */
+}
+
+.filter-fleet-container select option {
+    padding: 10px;
+}
+
+.filter-fleet-container .custom-select-wrapper::after {
+    content: "";
+    background: url('/wp-content/uploads/2025/02/ph_caret-down-light.svg') no-repeat center center;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%) rotate(0deg);
+    pointer-events: none;
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+}
+
+.filter-fleet-container .custom-select-wrapper.opened::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.filter-fleet-container select {
+  color: var(--Grey-Text, #191919);
+
+  /* Montserrat/Desktop 1440/H5 | Regular */
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 20.8px */
+  letter-spacing: -0.16px;
+  padding: 6px 12px;
+}
+
+.filter-fleet-container select option {
+    color: var(--Grey-Disabled, rgba(25, 25, 25, 0.50));
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: -0.16px;
+    margin-bottom: 8px;
+    padding: 5px;
+}
+
+.filter-fleet-container select:focus {
+    outline: none;
+    border-color: var(--Grey-Light, #EDEDED);
+}
+
+.filter-fleet-container select:focus {
+    border-color: var(--Grey-Light, #EDEDED);
+    outline: none;
+}
+
+.filter-fleet-container select.opened {
+    border-color: var(--Grey-Active, #007BFF);
+}
+
+.filter-fleet-container select:focus + .custom-select-wrapper::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.filter-fleet-container select:active + .custom-select-wrapper::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.custom-select-wrapper {
+  position: relative;
+}
+
+.page-fleet .fleet-item {
+  border-radius: 20px;
+  border: 1px solid var(--Grey-Middle, #CCC);
+  padding: 20px 12px;
+}
+
+.related-fleet-item {
+  border-radius: 20px;
+  border: 1px solid var(--Grey-Middle, #CCC);
+  padding: 20px 12px;
+}
+
+.page-fleet #fleet-results {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+#related-fleet-results {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.fleet-gallery {
+  position: relative;
+  width: 330px;
+  height: 240px;
+  overflow: hidden;
+  margin: 0 auto 20px;
+}
+
+.fleet-gallery .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  max-width: 292px;
+  margin: auto;
+}
+
+.fleet-item-title {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #BC6A2A;
+}
+
+.related-fleet-item-title {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #BC6A2A;
+  color: var(--Grey-Text, #191919);
+
+  /* Montserrat/Mobile 360/H3 | Medium */
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%; /* 20.8px */
+  letter-spacing: -0.16px;
+}
+
+.excerpt {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.fleet-item-car-services {
+  color: var(--Brown-Middle, #B29C87);
+
+  /* Montserrat/Mobile 360/H4 | Medium */
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%; /* 18.2px */
+  letter-spacing: -0.14px;
+  margin-bottom: 0;
+}
+
+.related-fleet-item-services {
+  color: var(--Brown-Middle, #B29C87);
+
+  /* Montserrat/Mobile 360/H4 | Medium */
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%; /* 18.2px */
+  letter-spacing: -0.14px;
+  margin-bottom: 0;
+}
+
+.filter-fleet-container-layout {
+  display: none;
+}
+
+.fleet-results-cards .fleet-results-cards-book {
+  display: none;
+}
+
+.related-fleet-container {
+  padding: 40px 0;
+}
+
+@media (min-width: 768px) {
+  .related-fleet-container {
+    padding: 64px 0;
+  }
+
+  .related-fleet-item-title {
+    color: var(--Grey-Text, #191919);
+
+    /* Montserrat/Tablet 768/H3 | Medium */
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%; /* 23.4px */
+    letter-spacing: -0.18px;
+  }
+
+  .page-fleet #fleet-results {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  #related-fleet-results {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .fleet-gallery {
+    position: relative;
+    width: 100%;
+    height: 188px;
+    overflow: hidden;
+    margin: 0 auto 0px;
+    max-width: 220px;
+}
+  .fleet-gallery .swiper-slide{
+    height: 188px;
+  }
+
+  .fleet-gallery .swiper-slide img {
+    object-fit: contain;
+  }
+
+  .page-fleet .fleet-item {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .related-fleet-item {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .page-fleet .filter-fleet {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .page-fleet .filter-fleet {
+    margin: 12px 0 32px;
+  }
+
+  .page-fleet .filter-fleet-container {
+    flex-direction: row;
+    margin: 0;
+    flex: 1 0 0;
+  }
+
+  .custom-select-wrapper {
+    width: 100%;
+  }
+
+  .filter-fleet-container select {
+    color: var(--Grey-Text, #191919);
+    /* Montserrat/Tablet 768/H5 | Regular */
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 18.2px */
+    letter-spacing: -0.154px;
+  }
+
+  .fleet-item-spec-item {
+    position: relative;
+    padding-left: 28px;
+    color: var(--Grey-Text, #191919);
+
+    /* Montserrat/Mobile 360/H2 | Medium */
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%; /* 23.4px */
+    letter-spacing: -0.18px;
+  }
+
+  .related-fleet-item-spec-item {
+    position: relative;
+    padding-left: 28px;
+    color: var(--Grey-Text, #191919);
+
+    /* Montserrat/Mobile 360/H2 | Medium */
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%; /* 23.4px */
+    letter-spacing: -0.18px;
+  }
+
+  .excerpt {
+      display: block;
+      -webkit-line-clamp: unset;
+  }
+
+  .car-image img {
+    max-height: 240px;
+  }
+
+  .fleet-container {
+    padding: 64px 0 48px;
+  }
+
+  .fleet-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+
+
+  .fleet-tags span {
+    color: var(--Orange-Hover, #D09B71);
+
+    /* Montserrat/Tablet 768/H4 | Medium */
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%; /* 20.8px */
+    letter-spacing: -0.16px;
+  }
+}
+
+@media (min-width: 1440px) {
+
+  .related-fleet-container {
+    padding: 48px 0;
+  }
+
+  .related-fleet-item-title {
+    color: var(--Grey-Text, #191919);
+
+    /* Montserrat/Mobile 360/H3 | Medium */
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%; /* 20.8px */
+    letter-spacing: -0.16px;
+  }
+
+  .page-fleet .fleet-item-info .fleet-item-title{
+    color: var(--Grey-Text, #191919);
+
+    /* Montserrat/Desktop 1440/H2 | Medium */
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%; /* 31.2px */
+    letter-spacing: -0.24px;
+    margin-bottom: 38px;
+    padding-bottom: 12px;
+  }
+
+  .fleet-item-car-services {
+    margin-bottom: 0;
+    color: var(--Brown-Middle, #B29C87);
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: -0.18px;
+  }
+
+  .fleet-item-spec-item:before {
+    top: 4px;
+  }
+
+  .fleet-item-car-specs {
+    margin-bottom: 12px;
+  }
+
+  .related-fleet-item-specs {
+    margin-bottom: 12px;
+  }
+
+  .excerpt {
+    margin-bottom: 38px;
+  }
+
+  .related-fleet-item-info .excerpt {
+    margin-bottom: 8px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .fleet-gallery .swiper-slide img {
+    max-width: 390px;
+    object-fit: cover;
+  }
+
+  .fleet-results-bloks .fleet-gallery .swiper-slide img {
+    max-width: 390px;
+    object-fit: cover;
+  }
+
+  .fleet-gallery .swiper-pagination-bullet {
+    background: var(--Orange-Default, #F8B886);
+    opacity: 1;
+    transition: all .3s;
+    width: 12px;
+    height: 12px;
+    margin: 0 8px 0 0 !important;
+  }
+
+  .fleet-gallery .swiper-pagination-bullet-active {
+    transition: all .3s;
+    width: 16px;
+    height: 16px;
+    background: #F8B886;
+    opacity: 1;
+    margin: 0 8px -4px 0 !important;
+  }
+
+  .fleet-gallery {
+    position: relative;
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+    margin: 0 auto 0;
+    max-width: 390px;
+  }
+
+  .filter-fleet-container select {
+    color: var(--Grey-Text, #191919);
+    /* Montserrat/Desktop 1440/H5 | Regular */
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 20.8px */
+    letter-spacing: -0.16px;
+  }
+
+  .page-fleet #fleet-results.fleet-results-bloks {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  #related-fleet-results.fleet-results-bloks {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+
+  .page-fleet #fleet-results.fleet-results-bloks .excerpt,
+  .page-fleet #fleet-results.fleet-results-bloks .fleet-item-title a{
+    display: none;
+  }
+
+  .fleet-item-info {
+    width: 100%;
+  }
+
+  .page-fleet #fleet-results.fleet-results-bloks .fleet-item{
+    width: 100%;
+    max-width: 392px;
+    flex-direction: column;
+    padding: 20px 32px;
+  }
+
+  #related-fleet-results.fleet-results-bloks .related-fleet-item {
+    position: relative;
+    width: 100%;
+    max-width: 392px;
+    flex-direction: column;
+    padding: 20px 12px;
+  }
+
+  #fleet-results-bloks.fleet-results-bloks .related-fleet-item{
+    width: 100%;
+    max-width: 392px;
+    flex-direction: column;
+    padding: 20px 32px;
+  }
+
+  .page-fleet #fleet-results.fleet-results-bloks .fleet-item .fleet-item-title{
+    margin-bottom: 6px;
+  }
+
+  #fleet-results-bloks.fleet-results-bloks .fleet-item .fleet-item-title{
+    margin-bottom: 6px;
+  }
+
+  .filter-fleet-container-layout {
+    display: flex;
+    width: 100%;
+    max-width: 68px;
+    gap: 12px;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  #fleet-results {
+      display: flex;
+      transition: opacity 0.5s ease-in-out;
+      opacity: 1;
+  }
+
+  #fleet-results-bloks {
+      display: flex;
+      transition: opacity 0.5s ease-in-out;
+      opacity: 1;
+  }
+
+  .fleet-results-cards {
+      flex-direction: row;
+      opacity: 1;
+  }
+
+  .fleet-results-bloks {
+      flex-direction: column;
+      opacity: 1;
+      gap: 50px;
+  }
+
+  .fleet-item {
+      transition: all 0.3s ease-in-out;
+  }
+
+  .page-fleet .filter-fleet {
+    margin: 12px 0 52px;
+  }
+
+  .selected {
+    opacity: 0.3;
+  }
+
+
+  .fleet-results-blocks .fleet-results-cards-book {
+    display: block;
+  }
+
+  .fleet-results-cards-book a{
+    width: 100%;
+    display: block;
+    margin-top: 20px;
+    max-width: 100%;
+    text-align: center;
+  }
+
+
+  .fleet-item-spec-item {
+    position: relative;
+    padding-left: 32px;
+    color: var(--Grey-Text, #191919);
+
+    /* Montserrat/Desktop 1440/H3 | Medium */
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%; /* 26px */
+    letter-spacing: -0.2px;
+  }
+
+  .fleet-container {
+    padding: 80px 0px;
+  }
+
+  .fleet-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+  }
+
+
+  .fleet-tags span {
+    color: var(--Orange-Hover, #D09B71);
+
+    /* Montserrat/Desktop 1440/H4 | Medium */
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%; /* 23.4px */
+    letter-spacing: -0.18px;
+  }
+
+  .info-fleet .container {
+    gap: 52px;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .car-image img {
+    max-height: 240px;
+    width: auto;
+    height: auto;
+    max-width: 600px;
+    max-height: unset;
+  }
+
+  .fleet-container .container:last-child .info-with-image-wrapper {
+    margin-bottom: 0;
+  }
+
+  .info-fleet {
+    margin-bottom: 52px;
+  }
+}

@@ -1,0 +1,106 @@
+.top_city_wrapper {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.top-city-category {
+  padding: 48px 0;
+}
+
+.top-cities-list {
+  padding: 150px 20px 20px;
+  border-radius: 20px;
+}
+
+.top-cities-list h3 {
+  color: var(--Grey-White, #FFF);
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%; /* 26px */
+  letter-spacing: -0.2px;
+}
+
+.top-cities-list .tag {
+  color: var(--Orange-Default, #F8B886);
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%; /* 18.2px */
+  letter-spacing: -0.14px;
+}
+
+.top-city-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.top-city-category-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+  .top-city-category-wrapper {
+    flex-direction: row;
+  }
+
+  .top-cities-list {
+    padding: 20px 20px 20px;
+    border-radius: 20px;
+    max-width: 330px;
+    min-height: 215px;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: end;
+  }
+
+  .top-city-category {
+    padding: 64px 0;
+  }
+
+  .top-cities-list h3 {
+    color: var(--Grey-White, #FFF);
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%; /* 31.2px */
+    letter-spacing: -0.264px;
+  }
+
+}
+
+@media (min-width: 1440px) {
+  .top-city-category {
+    padding: 80px 0;
+  }
+
+  .top-cities-list h3 {
+    color: var(--Grey-White, #FFF);
+    font-family: Montserrat;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%; /* 36.4px */
+    letter-spacing: -0.28px;
+  }
+
+  .top-city-category-wrapper {
+    flex-direction: row;
+    gap: 32px;
+    padding: 0 20px;
+  }
+
+  .top-cities-list {
+    max-width: 390px;
+    width: 100%;
+  }
+
+}
