@@ -2,11 +2,7 @@
 /**
  * Template Name: TOP Cities Page
  */
-
 get_header();
-
-
-
 $hero_section = get_field('hero_section');
 $background_image = $hero_section['background_image'] ?? '';
 $background_image_mobile = $hero_section['background_image_mobile'] ?? '';

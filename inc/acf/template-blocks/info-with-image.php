@@ -8,7 +8,7 @@ if ($main_info && isset($main_info['info'], $main_info['image'], $main_info['sid
     $flex_direction = ($side_image === 'right') ? 'right' : 'left';
     ?>
     <div class="container">
-      <div class="info-with-image-wrapper">
+      <div class="info-with-image-wrapper" id="AboutUs">
         <div class="info-with-image-<?php echo esc_attr($flex_direction); ?>">
             <div class="info-text">
               <?php echo wp_kses_post($info); ?>

@@ -40,14 +40,13 @@ jQuery(function ($) {
         }
     });
 
-
-
     function filterPosts() {
+        if ($('#search-input').length === 0) return;
         let input = $('#search-input').val().toLowerCase();
         if ($('.blog-item').length > 0) {
             $('.blog-item').each(function () {
-                let title = $(this).attr('data-title');
-                if (title.includes(input)) {
+                let title = $(this).attr('data-title') || '';
+                if (title && title.toLowerCase().includes(input)) {
                     $(this).show();
                 } else {
                     $(this).hide();
@@ -61,11 +60,12 @@ jQuery(function ($) {
     });
 
     function filterFleet() {
+        if ($('#search-input').length === 0) return;
         let input = $('#search-input').val().toLowerCase();
         if ($('.fleet-item').length > 0) {
             $('.fleet-item').each(function () {
-                let title = $(this).find('h3').text().toLowerCase();
-                if (title.includes(input)) {
+                let title = $(this).find('h3').text().toLowerCase() || '';
+                if (title && title.includes(input)) {
                     $(this).show();
                 } else {
                     $(this).hide();

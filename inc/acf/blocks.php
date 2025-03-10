@@ -190,6 +190,22 @@ function my_acf_init() {
             ),
         ));
 
+        acf_register_block_type(array(
+            'name'              => 'instagram_feed',
+            'title'             => __('Instagram Feed', 'text-domain'),
+            'description'       => __('A block to display Instagram feed header only.'),
+            'render_template'   => get_template_directory() . '/inc/acf/template-blocks/instagram-feed.php',
+            'category'          => 'common',
+            'icon'              => 'logo-instagram',
+            'keywords'          => array('instagram', 'feed', 'social', 'gallery'),
+            'supports'          => array(
+                'align' => true,
+                'anchor' => true,
+                'customClassName' => true,
+            ),
+        ));
+
+
 
     }
 }

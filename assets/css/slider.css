@@ -1,0 +1,32 @@
+.category-dots {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 10px;
+}
+
+.category-dots::-webkit-scrollbar {
+    height: 6px;
+    background-color: transparent;
+}
+
+.category-dots::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 10px;
+}
+
+.category-dots::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+}
+
+
+.category-button {
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+@media (max-width: 767px) {
+    .category-dots {
+        -webkit-overflow-scrolling: touch;
+    }
+}

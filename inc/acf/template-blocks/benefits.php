@@ -4,7 +4,7 @@ $info_blocks = get_field('info_block');
 
 if ($info_blocks): ?>
 <div class="container">
-  <div class="benefits-container">
+  <div class="benefits-container" id="Benefits">
       <?php if ($title): ?>
           <h2><?php echo esc_html($title); ?></h2>
       <?php endif; ?>

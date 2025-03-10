@@ -159,18 +159,48 @@
 			</div>
 			<div class="footer_bottom">
 				<div class="footer_bottom_info">
-					<h4><a href="tel:425-435-4141">425-435-4141</a></h4>
-					<h4><a href="mailto:info@premiumtowncar.com">info@premiumtowncar.com</a></h4>
+				    <?php if ( have_rows( 'contact_info', 'option' ) ): ?>
+				        <?php while ( have_rows( 'contact_info', 'option' ) ): the_row(); ?>
+				            <?php
+				                $phone = get_sub_field( 'phone' );
+				                $email = get_sub_field( 'email' );
+				            ?>
+				            <?php if ( ! empty( $phone ) ): ?>
+				                <h4><a href="tel:<?php echo esc_attr( $phone ); ?>"><?php echo esc_html( $phone ); ?></a></h4>
+				            <?php endif; ?>
+				            <?php if ( ! empty( $email ) ): ?>
+				                <h4><a href="mailto:<?php echo esc_attr( $email ); ?>"><?php echo esc_html( $email ); ?></a></h4>
+				            <?php endif; ?>
+				        <?php endwhile; ?>
+				    <?php endif; ?>
 				</div>
+
 				<div class="footer_bottom_warpper">
 					<div class="footer_bottom_reserved">
 						<p class="h4_monts_med">2024 All rights reserved</p>
 					</div>
 
-					<div class="footer_bottom_policy">
-						<a href="#" class="h4_monts_med">Privacy Policy</a>
-						<a href="#" class="h4_monts_med">Terms & Conditions</a>
-					</div>
+					<?php
+					$menu_name = 'Privacy Terms';
+					$menu = wp_get_nav_menu_object($menu_name);
+
+					if ($menu) {
+					    $menu_items = wp_get_nav_menu_items($menu->term_id);
+
+					    if ($menu_items) {
+					        echo '<div class="footer_bottom_policy">';
+					        foreach ($menu_items as $item) {
+					            echo '<a href="' . esc_url($item->url) . '" class="h4_monts_med">' . esc_html($item->title) . '</a>';
+					        }
+					        echo '</div>';
+					    } else {
+					        echo '<p>No menu items found.</p>';
+					    }
+					} else {
+					    echo '<p>Menu "Privacy Terms" not found.</p>';
+					}
+					?>
+
 				</div>
 
 
@@ -181,16 +211,16 @@
 
 	<style media="screen">
 			#custom-success-popup {
-			position: fixed;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			background: white;
-			padding: 20px;
-			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-			z-index: 1000;
-			border: 1px solid #ccc;
-			text-align: center;
+				position: fixed;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				background: white;
+				padding: 20px;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+				z-index: 1000;
+				border: 1px solid #ccc;
+				text-align: center;
 		}
 
 		#custom-success-popup button {
