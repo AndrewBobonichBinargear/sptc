@@ -1,0 +1,50 @@
+.intagram-feed {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+}
+
+.intagramfeed-block {
+  width: 100%;
+  max-width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  background: var(--Grey-Light, #EDEDED);
+}
+
+@media (min-width: 768px) {
+  .intagram-feed {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .intagramfeed-block {
+    width: 100%;
+    max-width: 140px;
+    height: 140px;
+    border-radius: 8px;
+    background: var(--Grey-Light, #EDEDED);
+  }
+}
+
+@media (min-width: 1440px) {
+  .intagram-feed {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .intagramfeed-block {
+    width: 100%;
+    max-width: 205px;
+    height: 210px;
+    flex: 1 0 0;
+  }
+
+  .intagramfeed-block:nth-child(n+7) {
+    display: none;
+  }
+}

@@ -9,7 +9,7 @@ if (!$main_info) {
 }
 ?>
 
-<section class="why-choose-us">
+<section class="why-choose-us" id="WhyChooseUs">
     <div class="container">
       <div class="why-choose-us-wrapper">
         <?php if ($title): ?>

@@ -58,7 +58,7 @@
 
 .related-fleet-item-spec-item {
   position: relative;
-  padding-left: 32px;
+  padding-left: 28px;
   color: var(--Grey-Text, #191919);
 
   /* Montserrat/Mobile 360/H2 | Medium */
@@ -127,7 +127,7 @@
   content: "";
   width: 20px;
   height: 20px;
-  background-size: contain;
+  background-size: cover;
   left: 0;
   top: 0px;
 }
@@ -145,7 +145,7 @@
 .related-fleet-item-spec-item.related-fleet-item-spec-item-luggage:before {
   background: url(/wp-content/uploads/2025/02/solar_bag-2-linear.svg);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
 }
 
 .info-fleet .container {
@@ -409,6 +409,14 @@
 }
 
 @media (min-width: 768px) {
+  .related-fleet-item-spec-item:before {
+    position: absolute;
+    content: "";
+    width: 28px;
+    height: 28px;
+    top: 2px;
+  }
+
   .related-fleet-container {
     padding: 64px 0;
   }
@@ -514,16 +522,16 @@
 
   .related-fleet-item-spec-item {
     position: relative;
-    padding-left: 28px;
+    padding-left: 40px;
     color: var(--Grey-Text, #191919);
 
-    /* Montserrat/Mobile 360/H2 | Medium */
+    /* Montserrat/Tablet 768/H2 | Medium */
     font-family: Montserrat;
-    font-size: 18px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 500;
-    line-height: 130%; /* 23.4px */
-    letter-spacing: -0.18px;
+    line-height: 130%; /* 26px */
+    letter-spacing: -0.2px;
   }
 
   .excerpt {
@@ -561,6 +569,16 @@
 }
 
 @media (min-width: 1440px) {
+
+  .related-fleet-item-spec-item {
+    color: var(--Grey-Text, #191919);
+    font-family: Montserrat;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%; /* 36.4px */
+    letter-spacing: -0.28px;
+  }
 
   .related-fleet-container {
     padding: 48px 0;

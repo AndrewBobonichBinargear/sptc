@@ -63,6 +63,7 @@
   width: 16px;
   height: 16px;
   background: #F8B886;
+  margin: 0 !important;
 }
 
 .outer-slider .swiper-pagination-bullet {
@@ -70,6 +71,14 @@
   height: 12px;
   background: #F8B886;
   opacity: 1;
+  margin: 0 !important;
+}
+
+.outer-slider .swiper-pagination {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
 }
 
 .category-buttons .category-button {
@@ -110,9 +119,9 @@
 
   .outer-slider .swiper-slide img {
     height: 303px;
-    object-fit: contain;
+    object-fit: cover;
     width: 100%;
-    max-width: 590px;
+    max-width: 570px;
     margin: 0px auto 40px;
   }
 
@@ -164,7 +173,7 @@
     font-size: 28px;
     font-style: normal;
     font-weight: 500;
-    line-height: 130%; /* 36.4px */ 
+    line-height: 130%; /* 36.4px */
     letter-spacing: -0.28px;
   }
 

@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 clickable: true,
             },
             autoplay: false,
-            speed: 2000,
+            speed: 200,
             mousewheel: false,
             allowTouchMove: false,
         });

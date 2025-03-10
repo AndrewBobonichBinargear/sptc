@@ -29,7 +29,7 @@ $button = $hero_section['button'] ?? [];
   </section>
 
   <div class="container">
-      <div class="blog-object-container">
+      <div class="blog-object-container"  id="blogsearch">
         <input type="text" id="search-input" placeholder="Search" onkeyup="filterPosts()">
 
           <div class="blog-object-container-wrapper">

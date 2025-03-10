@@ -1,9 +1,5 @@
 <?php
-
-    get_header();
-
-
-
+get_header();
 $hero_section = get_field('hero_section');
 $background_image = $hero_section['background_image'] ?? '';
 $background_image_mobile = $hero_section['background_image_mobile'] ?? '';
@@ -31,14 +27,15 @@ $button = $hero_section['button'] ?? [];
             </style>
         </section>
     <?php endif; ?>
-    
+
     <?php
-    if (have_posts()) :
-        while (have_posts()) : the_post();
-            the_content();
-        endwhile;
-    endif;
+        if (have_posts()) :
+            while (have_posts()) : the_post();
+                the_content();
+            endwhile;
+        endif;
     ?>
+
 </main>
 
 
