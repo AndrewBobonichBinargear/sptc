@@ -77,17 +77,43 @@
   overflow: hidden;
 }
 
-.service-item:hover .service-item-wrapper{
-  opacity: 1;
-  transition: all 1s;
-  height: 100%;
+.service-item .service-item-wrapper {
+  opacity: 0;
+  height: 0;
 }
 
-.service-item:hover h2.h1_monts_med{
-  opacity: 0;
-  display: none;
+.service-item h2.h1_monts_med {
+  opacity: 1;
+  display: block;
   transition: all 1s;
 }
+
+.service-item.active .service-item-wrapper {
+  opacity: 1;
+  height: 100%;
+  transition: all 1s;
+}
+
+.service-item.active h2.h1_monts_med {
+  opacity: 0;
+  display: none;
+}
+
+
+@media (min-width: 1024px) {
+  .service-item:hover .service-item-wrapper {
+    opacity: 1;
+    transition: all 1s;
+    height: 100%;
+  }
+
+  .service-item:hover h2.h1_monts_med {
+    opacity: 0;
+    display: none;
+    transition: all 1s;
+  }
+}
+
 
 .service-item::before {
   content: "";
