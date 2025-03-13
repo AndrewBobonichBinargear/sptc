@@ -237,61 +237,8 @@
 		}
 	</style>
 
-
-
 <?php wp_footer(); ?>
 
-<script>
-  var swiper = new Swiper(".swiper-gallery", {
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    grabCursor: true,
-    initialSlide: 0,
-    centeredSlides: true,
-    slidesPerView: "auto",
-    spaceBetween: 10,
-    speed: 2000,
-    mousewheel: false,
-    allowTouchMove: true,
-    on: {
-      click(event) {
-        swiper.slideTo(this.clickedIndex);
-      }
-    },
-    breakpoints: {
-      768: {
-        slidesPerView: "auto",
-        centeredSlides: true,
-        spaceBetween: 10,
-      },
-      0: {
-        slidesPerView: "auto",
-        centeredSlides: true,
-        spaceBetween: 6,
-      },
-    },
-  });
-
-  setTimeout(function () {
-    const transformValue = window.getComputedStyle(document.querySelector('.our-gallery .swiper-wrapper')).transform;
-
-    if (transformValue.startsWith('matrix')) {
-      const matrixValues = transformValue.match(/matrix.*\(([^,]+),([^,]+),([^,]+),([^,]+),([^,]+),([^,]+)\)/);
-      if (matrixValues) {
-        const translateX = parseInt(matrixValues[5], 10); // 5-й елемент - це значення translateX
-        document.querySelector('.our-gallery .swiper-wrapper').style.left = `-${translateX}px`;
-      }
-    } else if (transformValue.startsWith('translate3d')) {
-      const match = transformValue.match(/translate3d\(([^,]+)/);
-      if (match) {
-        const translateX = parseInt(match[1], 10); // Перше значення (378)
-        document.querySelector('.our-gallery .swiper-wrapper').style.left = `-${translateX}px`;
-      }
-    }
-  },100)
-</script>
 
 </body>
 </html>
