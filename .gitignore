@@ -8,9 +8,6 @@ node_modules/
 .idea/
 .vscode/
 
-# CSS files
-style.css
-style-rtl.css
 
 # JavaScript files
 assets/js/scripts.min.js
