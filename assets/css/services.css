@@ -19,6 +19,10 @@
   padding-bottom: 28px;
 }
 
+.info-with-image-wrapper ul li::marker {
+    font-size: 12px;
+}
+
 @media (min-width: 768px) {
   .services_hero {
       height: 600px;
@@ -32,6 +36,11 @@
 }
 
 @media (min-width: 1440px) {
+
+  .service-item .h1_monts_med{
+      font-size: 24px;
+  }
+
   .services_hero {
       height: 600px;
       background-repeat: no-repeat;

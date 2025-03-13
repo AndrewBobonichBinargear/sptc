@@ -74,6 +74,30 @@
   margin: 0 !important;
 }
 
+
+.fleet-results-bloks .fleet-gallery .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: #F8B886;
+  opacity: 1;
+  margin: 0 !important;
+}
+
+
+.fleet-results-bloks .swiper-pagination-bullet-active.swiper-pagination-bullet {
+  width: 16px;
+  height: 16px;
+  background: #F8B886;
+  margin: 0 !important;
+}
+
+.fleet-results-bloks .swiper-pagination {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+}
+
 .outer-slider .swiper-pagination {
   display: flex;
   align-items: center;

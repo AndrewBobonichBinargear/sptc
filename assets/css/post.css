@@ -23,9 +23,10 @@
   width: 100%;
   max-width: 100%;
   object-fit: cover;
-  height: 256px;
+  height: auto;
   border-radius: 16px;
   padding: 0 15px;
+  min-height: 256px;
 }
 
 .post .info-with-booking-wrapper p {
@@ -79,6 +80,7 @@
 
   .post .info-with-booking-wrapper p {
     margin-bottom: 20px;
+    text-align: justify;
   }
 
   .info-with-booking-wrapper {

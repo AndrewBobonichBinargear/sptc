@@ -785,8 +785,12 @@
   }
 
   .selected {
+    opacity: 1;
+  }
+  .not-selected {
     opacity: 0.3;
   }
+
 
 
   .fleet-results-blocks .fleet-results-cards-book {
@@ -860,5 +864,32 @@
 
   .info-fleet {
     margin-bottom: 52px;
+  }
+
+  #related-fleet-results.fleet-results-bloks .related-fleet-item-spec-item{
+    color: var(--Grey-Text, #191919);
+
+    /* Montserrat/Mobile 360/H2 | Medium */
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%; /* 23.4px */
+    letter-spacing: -0.18px;
+    padding-left: 32px;
+  }
+
+  #related-fleet-results.fleet-results-bloks .related-fleet-item-spec-item:before{
+    width: 20px;
+    height: 20px;
+    top: 0;
+  }
+
+  #related-fleet-results.fleet-results-bloks .related-fleet-item-info .excerpt{
+    font-size: 14px;
+  }
+
+  .services-page .info-with-image-wrapper p{
+    font-size: 18px;
   }
 }
