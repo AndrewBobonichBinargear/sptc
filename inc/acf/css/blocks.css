@@ -964,7 +964,6 @@
     margin-bottom: 32px;
   }
 
-
   .benefits-wrapper {
     flex-direction: row;
     justify-content: space-between;
@@ -1050,7 +1049,6 @@
 }
 
 @media (min-width: 1440px) {
-
 
   .services-page .default-info-block:first-of-type {
     padding-top: 80px;

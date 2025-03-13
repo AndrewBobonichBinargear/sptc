@@ -6,7 +6,7 @@ $gallery = get_field('gallery');
   <div class="our-gallery" id="#OurGallery">
       <div class="container">
           <h2><?php echo esc_html($title); ?></h2>
-          <div class="swiper">
+          <div class="swiper swiper-gallery">
               <div class="swiper-wrapper">
                   <?php foreach ($gallery as $image_url): ?>
                       <div class="swiper-slide">

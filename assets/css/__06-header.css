@@ -81,7 +81,6 @@
 }
 
 #burger-menu {
-  display: block;
   cursor: pointer;
   position: static;
   z-index: 1100;

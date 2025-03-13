@@ -1,4 +1,4 @@
-var swiper = new Swiper(".swiper", {
+var swiper = new Swiper(".swiper:not(.swiper-gallery)", {
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
