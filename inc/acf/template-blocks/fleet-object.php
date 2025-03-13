@@ -6,7 +6,7 @@ if ($fleet_objects): ?>
     <div class="related-fleet-container">
         <div class="why-choose-us-wrapper">
             <h2>Related</h2>
-            <a href="/our-fleet/" class="btn_small">View more</a>
+            <a href="/our-fleet/" class="btn_small_white">View more</a>
         </div>
         <div id="related-fleet-results" class="fleet-results-bloks">
             <?php

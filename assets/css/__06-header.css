@@ -252,4 +252,9 @@
   .header {
     padding: 28px 0px;
   }
+
+  #primary-menu {
+    display: flex;
+    grid-gap: 36px;
+  }
 }

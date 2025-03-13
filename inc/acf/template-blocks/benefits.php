@@ -12,7 +12,7 @@ if ($info_blocks): ?>
       <div class="benefits-wrapper">
           <?php foreach ($info_blocks as $info_block): ?>
               <div class="benefit-block">
-                  <h3 class="h3_monts_med"><?php echo esc_html($info_block['title']); ?></h3>
+                  <h3 class="benefit-block-title"><?php echo esc_html($info_block['title']); ?></h3>
                   <ul class="benefit-list">
                       <?php if (!empty($info_block['details_block'])): ?>
                           <?php foreach ($info_block['details_block'] as $detail): ?>

@@ -221,7 +221,6 @@
   letter-spacing: -0.154px;
 }
 
-
 .accordion_header {
   display: flex;
   justify-content: space-between;
@@ -396,13 +395,13 @@
 
 .info-with-image-right {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   gap: 36px;
 }
 
 .info-with-image-left {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   gap: 36px;
 }
 
@@ -647,7 +646,44 @@
   font-weight: 600;
 }
 
+
+.benefit-block-title {
+  color: var(--Grey-Text, #191919);
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%; /* 20.8px */
+  letter-spacing: -0.16px;
+}
+
+
+
 @media (min-width: 768px) {
+  .benefit-text {
+    color: var(--BG-Transparent, rgba(13, 13, 13, 0.84));
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 18.2px */
+    letter-spacing: -0.154px;
+  }
+
+
+  .benefit-block-title {
+    color: var(--Grey-Text, #191919);
+    text-align: center;
+
+    /* Montserrat/Tablet 768/H4 | Medium */
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%; /* 20.8px */
+    letter-spacing: -0.16px;
+  }
 
   .services-page .default-info-block:first-of-type {
     padding-top: 64px;
@@ -1313,6 +1349,7 @@
   .benefit-list {
     gap: 20px;
   }
+
   .benefit-text {
     color: var(--BG-Transparent, rgba(13, 13, 13, 0.84));
     font-family: Montserrat;
@@ -1327,7 +1364,7 @@
     padding: 80px 0;
   }
   .benefit-block {
-    padding: 48px 72px;
+    padding: 48px 68px;
     width: 100%;
   }
 
@@ -1416,11 +1453,23 @@
   .benefit-item {
     display: flex;
     gap: 18px;
+    align-items: center;
   }
 
+  .page-id-13 .info-with-image-right .info-text {
+    max-width: 720px;
+  }
 
-    .page-id-13 .info-with-image-right .info-text {
-      max-width: 720px;
-    }
+  .benefit-block-title {
+    color: var(--Grey-Text, #191919);
+    text-align: center;
 
+    /* Montserrat/Desktop 1440/H3 | SemiBold */
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%; /* 26px */
+    letter-spacing: -0.2px;
+  }
 }

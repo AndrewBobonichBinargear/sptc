@@ -1,9 +1,13 @@
 jQuery(function ($) {
     let page = 2;
     let no_more_posts = false;
+    let is_loading = false;
+    let scrollDelay = false;
 
     function load_more_posts() {
-        if (no_more_posts) return;
+        if (no_more_posts || is_loading) return;
+
+        is_loading = true;
 
         $.ajax({
             type: 'POST',
@@ -13,32 +17,40 @@ jQuery(function ($) {
                 page: page,
             },
             beforeSend: function () {
-                if (!no_more_posts) {
-                    $('#loading-icon').show();
-                }
+                $('#loading-icon').show();
             },
             success: function (response) {
                 if (response.trim() !== '') {
-                    $('.blog-object-container').append(response);
+                    $('.blog-object-container-wrapper').append(response);
                     page++;
                     filterPosts();
                 } else {
                     no_more_posts = true;
-                    $('#loading-icon img').hide();
                 }
                 $('#loading-icon').hide();
+                is_loading = false;
             },
             error: function () {
                 $('#loading-icon').hide();
+                is_loading = false;
             }
         });
     }
 
     $(window).scroll(function () {
-        if (!no_more_posts && $(window).scrollTop() + $(window).height() >= $(document).height() - 10) {
+        if (scrollDelay) return;
+
+        scrollDelay = true;
+        setTimeout(() => {
+            scrollDelay = false;
+        }, 200);
+
+        if (!no_more_posts &&
+            $(window).scrollTop() + $(window).height() >= $(document).height() - 10) {
             load_more_posts();
         }
     });
+
 
     function filterPosts() {
         if ($('#search-input').length === 0) return;
@@ -77,4 +89,34 @@ jQuery(function ($) {
     $('#search-input').on('input', function () {
         filterFleet();
     });
+});
+
+jQuery(document).ready(function($) {
+    if ($(window).width() <= 768) {
+        $('.view-more-btn').on('click', function() {
+            var button = $(this);
+            var categoryId = button.data('category-id');
+
+            $.ajax({
+                url: ajax_params.ajax_url,
+                type: 'POST',
+                data: {
+                    action: 'top_city_load_more',
+                    category_id: categoryId,
+                    offset: $('#' + 'posts-' + categoryId + ' .top-cities-list').length,
+                },
+                beforeSend: function() {
+                    button.text('Loading...');
+                },
+                success: function(response) {
+                    if (response) {
+                        $('#posts-' + categoryId).append(response);
+                        button.text('View More');
+                    } else {
+                        button.remove();
+                    }
+                }
+            });
+        });
+    }
 });

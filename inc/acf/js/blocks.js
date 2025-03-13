@@ -9,16 +9,16 @@ jQuery(document).ready(function ($) {
             if (!numberMatch) return;
 
             var target = parseInt(numberMatch[0], 10);
-            $this.text('0' + (textAfterNumber ? ' ' + textAfterNumber : ''));
+            $this.text('0' + (textAfterNumber ? textAfterNumber : ''));
 
             $({ countNum: 0 }).animate({ countNum: target }, {
                 duration: 3000,
                 easing: 'swing',
                 step: function () {
-                    $this.text(Math.floor(this.countNum) + (textAfterNumber ? ' ' + textAfterNumber : ''));
+                    $this.text(Math.floor(this.countNum) + (textAfterNumber ? textAfterNumber : ''));
                 },
                 complete: function () {
-                    $this.text(target + (textAfterNumber ? ' ' + textAfterNumber : ''));
+                    $this.text(target + (textAfterNumber ? textAfterNumber : ''));
                 }
             });
         });
@@ -38,6 +38,7 @@ jQuery(document).ready(function ($) {
         }
     });
 });
+
 
 
 
@@ -80,9 +81,13 @@ document.addEventListener('DOMContentLoaded', function() {
   const cardsButton = document.querySelector('.filter-fleet-container-layout-cards');
   const bloksButton = document.querySelector('.filter-fleet-container-layout-bloks');
   const fleetResults = document.getElementById('fleet-results');
-  const filterLayout = document.querySelector('.filter-fleet-container-layout');
 
   if (cardsButton && bloksButton && fleetResults) {
+
+    cardsButton.classList.add('selected');
+    bloksButton.classList.add('not-selected');
+    fleetResults.classList.add('fleet-results-cards');
+
     cardsButton.addEventListener('click', function() {
       fleetResults.style.opacity = 0;
       setTimeout(function() {
@@ -91,7 +96,10 @@ document.addEventListener('DOMContentLoaded', function() {
         fleetResults.style.opacity = 1;
 
         cardsButton.classList.add('selected');
+        cardsButton.classList.remove('not-selected');
+
         bloksButton.classList.remove('selected');
+        bloksButton.classList.add('not-selected');
       }, 500);
     });
 
@@ -103,11 +111,15 @@ document.addEventListener('DOMContentLoaded', function() {
         fleetResults.style.opacity = 1;
 
         bloksButton.classList.add('selected');
+        bloksButton.classList.remove('not-selected');
+
         cardsButton.classList.remove('selected');
+        cardsButton.classList.add('not-selected');
       }, 500);
     });
   }
 });
+
 
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {

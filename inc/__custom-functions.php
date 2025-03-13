@@ -406,3 +406,58 @@ function add_custom_admin_styles() {
 }
 
 add_action('admin_head', 'add_custom_admin_styles');
+
+function top_city_load_more() {
+    if (isset($_POST['category_id']) && isset($_POST['offset'])) {
+        $category_id = intval($_POST['category_id']);
+        $offset = intval($_POST['offset']);
+
+        $args = array(
+            'post_type'      => 'top_cities',
+            'posts_per_page' => 2,
+            'offset'         => $offset,
+            'tax_query'      => array(
+                array(
+                    'taxonomy' => 'top_city_category',
+                    'field'    => 'term_id',
+                    'terms'    => $category_id,
+                ),
+            ),
+        );
+
+        $query = new WP_Query($args);
+
+        if ($query->have_posts()) :
+            while ($query->have_posts()) : $query->the_post();
+                $hero_section = get_field('hero_section');
+                $background_image_mobile = $hero_section['background_image_mobile'] ?? '';
+                $tags = get_the_terms(get_the_ID(), 'top_city_tag');
+                ?>
+                <div class="top-cities-list"
+                    style="background:
+                        linear-gradient(180deg, rgba(16, 16, 16, 0.00) 28.35%, #101010 89.26%),
+                        url('<?php echo esc_url($background_image_mobile); ?>');
+                        background-size: cover;
+                        background-position: center;">
+                    <div class="top-city-item">
+                        <a href="<?php the_permalink(); ?>">
+                            <h3><?php the_title(); ?></h3>
+                            <div class="top-city-tags">
+                                <?php if (!empty($tags) && !is_wp_error($tags)) :
+                                    foreach ($tags as $tag) :
+                                        echo '<span class="tag">' . esc_html($tag->name) . '</span>';
+                                    endforeach;
+                                endif; ?>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <?php
+            endwhile;
+        endif;
+        wp_reset_postdata();
+    }
+    die();
+}
+add_action('wp_ajax_top_city_load_more', 'top_city_load_more');
+add_action('wp_ajax_nopriv_top_city_load_more', 'top_city_load_more');
