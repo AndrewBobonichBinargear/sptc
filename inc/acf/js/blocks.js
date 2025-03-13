@@ -120,8 +120,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-
-
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener("click", function(e) {
         e.preventDefault();
@@ -129,5 +127,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         document.querySelector(this.getAttribute("href")).scrollIntoView({
             behavior: "smooth"
         });
+    });
+});
+
+
+document.querySelectorAll('.service-item').forEach(item => {
+  item.addEventListener('click', () => {
+      if (window.innerWidth <= 1024) {
+        item.classList.toggle('active');
+      }
     });
 });

@@ -16,17 +16,18 @@
 .post figure {
   margin: auto;
   text-align: center;
+  margin: 8px 0 20px 0;
+  padding: 0 15px;
 }
 
 .post figure img {
-  margin: 8px 0 20px 0;
   width: 100%;
   max-width: 100%;
   object-fit: cover;
   height: auto;
   border-radius: 16px;
-  padding: 0 15px;
-  min-height: 256px;
+  max-height: 256px;
+  padding: 0;
 }
 
 .post .info-with-booking-wrapper p {
@@ -74,6 +75,10 @@
   }
 
   .post figure img {
+    padding: 0;
+  }
+
+  .post figure {
     margin: 20px 0 28px 0;
     padding: 0 48px;
   }
@@ -135,7 +140,11 @@
   }
 
   .post figure img {
-    margin: 24px 0 28px 0;
+    padding: 0;
+  }
+
+  .post figure {
+    margin: 24px auto 28px;
     padding: 0;
   }
 
