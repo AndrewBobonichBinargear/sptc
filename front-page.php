@@ -17,7 +17,6 @@ $main_title = $hero_section['main_title'];
 ?>
 
 <main class="front">
-
 	<section class="front_hero" style="background-image: linear-gradient(1deg, rgba(13, 13, 13, 0.80) 0.9%, rgba(13, 13, 13, 0.00) 99%), url(<?php echo esc_url($background_image); ?>);">
 	    <div class="container">
 	        <h1><?php echo esc_html($main_title); ?></h1>

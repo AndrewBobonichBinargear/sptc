@@ -1,9 +1,12 @@
 <?php
-$line_image = get_field('lines');
+$line_video = get_field('lines');
 
-if ($line_image) :
+if ($line_video) :
+    $video_url = $line_video['url'];
 ?>
     <div class="lines-block">
-        <img src="<?php echo esc_url($line_image); ?>" alt="Lines" class="lines-image">
+        <video autoplay muted loop playsinline class="lines-video">
+            <source src="<?php echo esc_url($video_url); ?>" type="video/webm">
+        </video>
     </div>
 <?php endif; ?>

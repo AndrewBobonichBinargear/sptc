@@ -194,10 +194,11 @@ function seattlepremiumtowncarservice_scripts() {
     wp_register_script('blocks', get_template_directory_uri() . '/inc/acf/js/blocks.js', array('jquery', 'countup'), '1.0.0', true);
     wp_enqueue_script('blocks');
 
-		wp_register_script('popup', get_template_directory_uri() . '/assets/js/popup.js', array('jquery'), '1.0.0', true);
-		wp_enqueue_script('popup');
+    wp_register_script('popup', get_template_directory_uri() . '/assets/js/popup.js', array('jquery'), '1.0.0', true);
+    wp_enqueue_script('popup');
 
     wp_enqueue_script('seattlepremiumtowncarservice-script', get_template_directory_uri() . '/assets/js/scripts.min.js', array('jquery'), _S_VERSION, true);
+    wp_enqueue_script('lottie', 'https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.5/lottie.min.js', array(), '5.7.5', true);
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
@@ -214,6 +215,7 @@ function seattlepremiumtowncarservice_scripts() {
     wp_dequeue_style('wp-block-library-theme');
 }
 add_action('wp_enqueue_scripts', 'seattlepremiumtowncarservice_scripts');
+
 
 
 require_once get_template_directory() . '/inc/acf/blocks.php';
