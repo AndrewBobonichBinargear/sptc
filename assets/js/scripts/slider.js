@@ -84,40 +84,64 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-  const slider = document.querySelector('.gallery-slider');
-  const slides = Array.from(slider.querySelectorAll('.swiper-slide'));
-  const paginationContainer = document.createElement('div');
-  paginationContainer.classList.add('swiper-pagination');
-  slider.appendChild(paginationContainer);
+   const slider = document.querySelector('.gallery-slider');
+   const wrapper = slider.querySelector('.swiper-wrapper');
+   const slides = Array.from(wrapper.querySelectorAll('.swiper-slide'));
 
-  slides.forEach((slide, index) => {
-    const bullet = document.createElement('span');
-    bullet.classList.add('swiper-pagination-bullet');
-    if (index === 0) bullet.classList.add('swiper-pagination-bullet-active');
-    bullet.addEventListener('click', () => changeActiveSlide(index));
-    paginationContainer.appendChild(bullet);
-  });
+   const paginationContainer = document.createElement('div');
+   paginationContainer.classList.add('swiper-pagination');
+   slider.appendChild(paginationContainer);
 
-  function changeActiveSlide(activeIndex) {
-    slides.forEach((s, i) => s.classList.toggle('swiper-slide-active', i === activeIndex));
-    document.querySelectorAll('.swiper-pagination-bullet').forEach((b, i) =>
-      b.classList.toggle('swiper-pagination-bullet-active', i === activeIndex)
-    );
+   let currentIndex = 0;
 
-    if (activeIndex !== 1) {
-      const gap = parseInt(window.getComputedStyle(slider.querySelector('.swiper-wrapper')).gap, 10);
-      let totalOffset = slides.slice(0, activeIndex).reduce((acc, slide) => acc + slide.offsetWidth + gap, 0);
+   slides.forEach((slide, index) => {
+     const bullet = document.createElement('span');
+     bullet.classList.add('swiper-pagination-bullet');
+     if (index === 0) bullet.classList.add('swiper-pagination-bullet-active');
+     bullet.addEventListener('click', () => changeActiveSlide(index));
+     paginationContainer.appendChild(bullet);
+   });
 
-      slider.querySelector('.swiper-wrapper').scrollTo({
-        left: totalOffset,
-        behavior: 'smooth'
-      });
-    }
-  }
+   function changeActiveSlide(activeIndex) {
+     slides.forEach((s, i) => s.classList.toggle('swiper-slide-active', i === activeIndex));
+     document.querySelectorAll('.swiper-pagination-bullet').forEach((b, i) =>
+       b.classList.toggle('swiper-pagination-bullet-active', i === activeIndex)
+     );
 
-  changeActiveSlide(0);
+     const slide = slides[activeIndex];
+     const slideRect = slide.getBoundingClientRect();
+     const wrapperRect = wrapper.getBoundingClientRect();
 
-  slides.forEach((slide, index) => {
-    slide.addEventListener('click', () => changeActiveSlide(index));
-  });
-});
+     const gap = parseInt(window.getComputedStyle(wrapper).gap, 10) || 0;
+     let totalOffset = slides.slice(0, activeIndex).reduce((acc, s) => acc + s.offsetWidth + gap, 0);
+
+     const nudge = 40;
+     if (activeIndex === 2 || activeIndex === 3) {
+       if (activeIndex > currentIndex) {
+         totalOffset += nudge;
+       } else if (activeIndex < currentIndex) {
+         totalOffset -= nudge;
+       }
+     }
+
+     if (
+       slideRect.left < wrapperRect.left ||
+       slideRect.right > wrapperRect.right ||
+       activeIndex === 2 ||
+       activeIndex === 3
+     ) {
+       wrapper.scrollTo({
+         left: totalOffset,
+         behavior: 'smooth'
+       });
+     }
+
+     currentIndex = activeIndex;
+   }
+
+   changeActiveSlide(0);
+
+   slides.forEach((slide, index) => {
+     slide.addEventListener('click', () => changeActiveSlide(index));
+   });
+ });

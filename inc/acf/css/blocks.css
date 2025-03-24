@@ -332,11 +332,15 @@
 
 .lines-block {
   margin: 36px 0 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
 }
 
-.lines-block img{
+.lines-block video{
   max-width: 100%;
   width: 100%;
+  margin: auto;
 }
 
 .why-choose-us {
