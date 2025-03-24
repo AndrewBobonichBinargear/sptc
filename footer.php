@@ -242,55 +242,69 @@
 <?php wp_footer(); ?>
 
 <script>
-  var swiper = new Swiper(".swiper-gallery", {
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    grabCursor: true,
-    initialSlide: 0,
-    centeredSlides: true,
-    slidesPerView: "auto",
-    spaceBetween: 10,
-    speed: 2000,
-    mousewheel: false,
-    allowTouchMove: true,
-    on: {
-      click(event) {
-        swiper.slideTo(this.clickedIndex);
+  document.addEventListener('DOMContentLoaded', function () {
+    const slider = document.querySelector('.gallery-slider');
+    const wrapper = slider.querySelector('.swiper-wrapper');
+    const slides = Array.from(wrapper.querySelectorAll('.swiper-slide'));
+
+    const paginationContainer = document.createElement('div');
+    paginationContainer.classList.add('swiper-pagination');
+    slider.appendChild(paginationContainer);
+
+    let currentIndex = 0;
+
+    slides.forEach((slide, index) => {
+      const bullet = document.createElement('span');
+      bullet.classList.add('swiper-pagination-bullet');
+      if (index === 0) bullet.classList.add('swiper-pagination-bullet-active');
+      bullet.addEventListener('click', () => changeActiveSlide(index));
+      paginationContainer.appendChild(bullet);
+    });
+
+    function changeActiveSlide(activeIndex) {
+      slides.forEach((s, i) => s.classList.toggle('swiper-slide-active', i === activeIndex));
+      document.querySelectorAll('.swiper-pagination-bullet').forEach((b, i) =>
+        b.classList.toggle('swiper-pagination-bullet-active', i === activeIndex)
+      );
+
+      const slide = slides[activeIndex];
+      const slideRect = slide.getBoundingClientRect();
+      const wrapperRect = wrapper.getBoundingClientRect();
+
+      const gap = parseInt(window.getComputedStyle(wrapper).gap, 10) || 0;
+      let totalOffset = slides.slice(0, activeIndex).reduce((acc, s) => acc + s.offsetWidth + gap, 0);
+
+      const nudge = 40;
+      if (activeIndex === 2 || activeIndex === 3) {
+        if (activeIndex > currentIndex) {
+          totalOffset += nudge;
+        } else if (activeIndex < currentIndex) {
+          totalOffset -= nudge;
+        }
       }
-    },
-    breakpoints: {
-      768: {
-        slidesPerView: "auto",
-        centeredSlides: true,
-        spaceBetween: 10,
-      },
-      0: {
-        slidesPerView: "auto",
-        centeredSlides: true,
-        spaceBetween: 6,
-      },
-    },
+
+      if (
+        slideRect.left < wrapperRect.left ||
+        slideRect.right > wrapperRect.right ||
+        activeIndex === 2 ||
+        activeIndex === 3
+      ) {
+        wrapper.scrollTo({
+          left: totalOffset,
+          behavior: 'smooth'
+        });
+      }
+
+      currentIndex = activeIndex;
+    }
+
+    changeActiveSlide(0);
+
+    slides.forEach((slide, index) => {
+      slide.addEventListener('click', () => changeActiveSlide(index));
+    });
   });
 
-  setTimeout(function () {
-    const transformValue = window.getComputedStyle(document.querySelector('.our-gallery .swiper-wrapper')).transform;
-
-    if (transformValue.startsWith('matrix')) {
-      const matrixValues = transformValue.match(/matrix.*\(([^,]+),([^,]+),([^,]+),([^,]+),([^,]+),([^,]+)\)/);
-      if (matrixValues) {
-        const translateX = parseInt(matrixValues[5], 10); // 5-й елемент - це значення translateX
-        document.querySelector('.our-gallery .swiper-wrapper').style.left = `-${translateX}px`;
-      }
-    } else if (transformValue.startsWith('translate3d')) {
-      const match = transformValue.match(/translate3d\(([^,]+)/);
-      if (match) {
-        const translateX = parseInt(match[1], 10); // Перше значення (378)
-        document.querySelector('.our-gallery .swiper-wrapper').style.left = `-${translateX}px`;
-      }
-    }
-  },100)
 </script>
 
 </body>
