@@ -267,32 +267,58 @@
         b.classList.toggle('swiper-pagination-bullet-active', i === activeIndex)
       );
 
-      const slide = slides[activeIndex];
-      const slideRect = slide.getBoundingClientRect();
-      const wrapperRect = wrapper.getBoundingClientRect();
+      if (window.outerWidth < 950) {
+        const slide = slides[activeIndex];
+        const slideRect = slide.getBoundingClientRect();
+        const wrapperRect = wrapper.getBoundingClientRect();
 
-      const gap = parseInt(window.getComputedStyle(wrapper).gap, 10) || 0;
-      let totalOffset = slides.slice(0, activeIndex).reduce((acc, s) => acc + s.offsetWidth + gap, 0);
+        let totalOffset = 0;
 
-      const nudge = 40;
-      if (activeIndex === 2 || activeIndex === 3) {
-        if (activeIndex > currentIndex) {
-          totalOffset += nudge;
-        } else if (activeIndex < currentIndex) {
-          totalOffset -= nudge;
+        if (activeIndex === 1) {
+          if (activeIndex > currentIndex) {
+            totalOffset = 0;
+          }
+          if (activeIndex < currentIndex) {
+            totalOffset = 0;
+          }
         }
-      }
 
-      if (
-        slideRect.left < wrapperRect.left ||
-        slideRect.right > wrapperRect.right ||
-        activeIndex === 2 ||
-        activeIndex === 3
-      ) {
-        wrapper.scrollTo({
-          left: totalOffset,
-          behavior: 'smooth'
-        });
+        if (activeIndex === 2 || activeIndex === 3) {
+          if (activeIndex > currentIndex) {
+            totalOffset = 100;
+          }
+          if (activeIndex < currentIndex) {
+            totalOffset = 60;
+          }
+        }
+
+        if (activeIndex === 4) {
+          if (activeIndex > currentIndex) {
+            totalOffset = 200;
+          }
+          if (activeIndex < currentIndex) {
+            totalOffset = 60;
+          }
+        }
+
+        if (activeIndex === 5) {
+          if (activeIndex > currentIndex) {
+            totalOffset = 1000;
+          }
+        }
+
+        if (
+          slideRect.left < wrapperRect.left ||
+          slideRect.right > wrapperRect.right ||
+          activeIndex === 2 ||
+          activeIndex === 3 ||
+          activeIndex === 1
+        ) {
+          wrapper.scrollTo({
+            left: totalOffset,
+            behavior: 'smooth'
+          });
+        }
       }
 
       currentIndex = activeIndex;
